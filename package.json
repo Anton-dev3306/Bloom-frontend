@@ -9,9 +9,19 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@emoji-mart/data": "^1.2.1",
+    "@emoji-mart/react": "^1.1.1",
+    "@stomp/stompjs": "^7.2.1",
+    "axios": "^1.13.4",
+    "emoji-mart": "^5.6.0",
+    "libphonenumber-js": "^1.12.35",
     "next": "16.1.6",
     "react": "19.2.3",
-    "react-dom": "19.2.3"
+    "react-dom": "19.2.3",
+    "react-phone-number-input": "^3.4.14",
+    "sockjs": "^0.3.24",
+    "sockjs-client": "^1.6.1",
+    "ws": "^8.19.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

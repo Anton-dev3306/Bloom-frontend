@@ -1,42 +1,168 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+@layer base {
+    body {
+        @apply antialiased;
+    }
+}
+
+@layer utilities {
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .shadow-glow {
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+    }
+
+    .shadow-glow-purple {
+        box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4);
+    }
+
+    .scrollbar-thin {
+        scrollbar-width: thin;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 10px;
+    }
+
+    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+}
+
 @layer components {
+    /* MANTENER - Esta clase está perfecta */
+    .app-container {
+        @apply flex h-screen overflow-hidden bg-gray-100;
+    }
+
+    /* AGREGAR - Para el contenedor del chat */
+    .chat-section {
+        @apply flex-1 flex flex-col overflow-hidden;
+    }
+
+    .btn-icon {
+        @apply w-9 h-9 rounded-full flex items-center justify-center text-white hover:bg-white/10 transition-colors;
+    }
+
+    .btn-icon-close {
+        @apply w-9 h-9 rounded-full flex items-center justify-center text-white hover:bg-red-500/20 transition-colors;
+    }
+
+    .avatar-sm {
+        @apply w-8 h-8 rounded-full flex items-center justify-center text-xs;
+    }
+
+    .avatar-lg {
+        @apply w-12 h-12 rounded-full flex items-center justify-center text-base;
+    }
+
+    .loading-screen {
+        @apply flex items-center justify-center h-screen bg-gradient-to-br from-[#667eea] to-[#764ba2];
+    }
+
+    .welcome-screen {
+        @apply flex-1 flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100;
+    }
+
     .phone-input-custom {
         @apply w-full;
     }
 
     .phone-input-custom .PhoneInputInput {
-        @apply w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white text-base outline-none transition-all;
+        @apply w-full px-4 py-3 bg-white border border-gray-200 rounded-xl text-gray-900 text-base outline-none transition-all;
     }
 
     .phone-input-custom .PhoneInputInput:focus {
-        @apply border-indigo-600 ring-2 ring-indigo-500/50;
+        @apply border-blue-400 ring-2 ring-blue-500/20;
     }
 
     .phone-input-custom .PhoneInputInput:disabled {
         @apply opacity-50 cursor-not-allowed;
     }
+
+    .phone-input-custom .PhoneInputInput::placeholder {
+        @apply text-gray-500;
+    }
+
+    .phone-input-custom .PhoneInputCountry {
+        @apply mr-3 p-3 bg-white border border-gray-200 rounded-xl;
+    }
+
+    .phone-input-custom .PhoneInputCountrySelect {
+        @apply bg-transparent text-black border-none outline-none cursor-pointer;
+    }
+
+    .phone-input-custom .PhoneInputCountryIcon {
+        @apply w-6 h-6 rounded overflow-hidden;
+    }
+
+    .phone-input-custom .PhoneInputCountryIconImg {
+        @apply block w-full h-full;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.3s ease-in-out;
+}
