@@ -79,7 +79,8 @@ export default function MessageBubble({
     const thumbnailUrl = metadata.thumbnailUrl;
     const fileName = metadata.fileName || 'Archivo';
     const fileSize = metadata.fileSize || 0;
-    const API_BASE_URL = 'http://localhost:8082';
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8082';
+
 
     const handleReactionUpdate = (messageId, updatedReactions) => {
         setReactions(updatedReactions);

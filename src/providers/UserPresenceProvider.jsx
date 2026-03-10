@@ -24,7 +24,8 @@ export function UserPresenceProvider({ children }) {
 
         const loadInitialOnlineUsers = async () => {
             try {
-                const response = await fetch('http://localhost:8082/api/presence/online/ids');
+                const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8082';
+                const response = await fetch(`${API_BASE_URL}/api/presence/online/ids`);
                 const data = await response.json();
 
                 if (data.success && data.onlineUserIds) {
