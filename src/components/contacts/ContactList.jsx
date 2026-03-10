@@ -63,7 +63,8 @@ export default function ContactList({ contacts, onStartChat, onDeleteContact  })
                         const reactivePic = userId ? getUserProfilePicture(userId) : null;
                         const staticPic = contact.contact?.profilePictureUrl || null;
                         const picUrl = reactivePic ?? staticPic;
-                        const profilePicUrl = picUrl ? API_BASE_URL + picUrl : null;
+                        const profilePicUrl = picUrl ? picUrl : null;
+
 
                         return (
                             <div

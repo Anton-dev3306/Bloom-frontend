@@ -76,9 +76,9 @@ export default function ChatList({ chats, onChatClick, currentChatId }) {
                             : null;
                         const groupPicUrl = isGroup ? chat.chatProfilePictureUrl : null;
                         const fullProfilePicUrl = profilePicUrl
-                            ? API_BASE_URL + profilePicUrl
+                            ? profilePicUrl
                             : groupPicUrl
-                                ? API_BASE_URL + groupPicUrl
+                                ? groupPicUrl
                                 : null;
 
                         return (
