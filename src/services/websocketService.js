@@ -1,7 +1,8 @@
 import SockJS from 'sockjs-client';
 import { Stomp } from '@stomp/stompjs';
 
-const WS_URL = process.env.NEXT_PUBLIC_WS_URL || 'http://localhost:8082/ws';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8082';
+const WS_URL = `${API_URL}/ws`;
 
 class WebSocketService {
     constructor() {
@@ -56,7 +57,7 @@ class WebSocketService {
                     (frame) => {
                         this.connected = true;
                         this.reconnectAttempts = 0;
-                        console.log('✅ WebSocket conectado con userId:', this.userId);
+                        console.log(' WebSocket conectado con userId:', this.userId);
 
                         // Se notifica al servidor que el usuario se conectó
                         if (this.userId) {
