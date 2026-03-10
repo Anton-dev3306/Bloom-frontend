@@ -178,7 +178,7 @@ export default function MessageBubble({
 
             if (isAudio && imageUrl) {
                 return <AudioBubble
-                    url={API_BASE_URL + imageUrl}
+                    url={imageUrl}
                     isOwn={isOwn}
                     senderName={senderName}
                     senderPicUrl={contactProfilePicUrl}
@@ -194,7 +194,7 @@ export default function MessageBubble({
                         </div>
                     )}
                     <img
-                        src={API_BASE_URL + (thumbnailUrl || imageUrl)}
+                        src={(thumbnailUrl || imageUrl)}
                         alt={fileName}
                         className="block rounded-2xl max-w-full cursor-pointer shadow-sm"
                         style={{ maxHeight: '300px' }}
@@ -213,7 +213,7 @@ export default function MessageBubble({
                         </div>
                     )}
                     <video
-                        src={API_BASE_URL + imageUrl}
+                        src={imageUrl}
                         controls
                         preload="metadata"
                         className="block rounded-2xl max-w-full shadow-sm"
@@ -229,7 +229,7 @@ export default function MessageBubble({
 
                     {/* Tarjeta de archivo */}
                     <a
-                        href={API_BASE_URL + imageUrl}
+                        href={imageUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`
@@ -386,7 +386,7 @@ export default function MessageBubble({
 
             {showFullImage && imageUrl && (
                 <ImageViewer
-                    src={API_BASE_URL + imageUrl}
+                    src={imageUrl}
                     fileName={fileName}
                     onClose={() => setShowFullImage(false)}
                 />

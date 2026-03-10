@@ -218,13 +218,11 @@ export default function ChatInterface({
     const otherUserId = currentChat?.otherUserId;
     const isContactOnline = otherUserId ? isUserOnline(otherUserId) : false;
     const otherUserPic = otherUserId ? getUserProfilePicture(otherUserId) : null;
-    const fullPicUrl = otherUserPic ? API_BASE_URL + otherUserPic : null;
+
+    const fullPicUrl = otherUserPic || null;
 
     //Chat grupal: foto del chat
-    const groupPicUrl = currentChat?.chatProfilePictureUrl
-        ? API_BASE_URL + currentChat.chatProfilePictureUrl
-        : null;
-
+    const groupPicUrl = currentChat?.chatProfilePictureUrl || null;
     //URL de avatar a utilizar (privado: otro usuario, grupo: foto de grupo)
     const headerAvatarUrl = isGroup ? groupPicUrl : fullPicUrl;
 
@@ -390,7 +388,7 @@ export default function ChatInterface({
                                 let senderPicUrl = null;
                                 if (isGroup && message.senderId !== currentUserId) {
                                     if (message.senderProfilePictureUrl) {
-                                        senderPicUrl = API_BASE_URL + message.senderProfilePictureUrl;
+                                        senderPicUrl = message.senderProfilePictureUrl;
                                     }
                                 } else if (!isGroup && message.senderId !== currentUserId) {
                                     senderPicUrl = fullPicUrl;

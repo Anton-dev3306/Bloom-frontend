@@ -157,9 +157,7 @@ export default function GroupMembersPanel({ chat, currentUserId, onClose, onChat
         return name.includes(searchQuery.toLowerCase());
     });
 
-    const groupPicUrl = chat?.chatProfilePictureUrl
-        ? API_BASE_URL + chat.chatProfilePictureUrl
-        : null;
+    const groupPicUrl = currentChat?.chatProfilePictureUrl || null;
 
     return (
         <div className="absolute top-0 right-0 h-full w-[320px] z-50 flex flex-col bg-white shadow-xl"
@@ -233,7 +231,7 @@ export default function GroupMembersPanel({ chat, currentUserId, onClose, onChat
                             filteredContacts.map((c) => {
                                 const user = c.contact;
                                 const displayName = c.alias || user?.displayName || user?.username || 'Usuario';
-                                const picUrl = user?.profilePictureUrl ? API_BASE_URL + user.profilePictureUrl : null;
+                                const picUrl = user?.profilePictureUrl || null;
                                 const isAdding = addingUserId === user?.userId;
 
                                 return (

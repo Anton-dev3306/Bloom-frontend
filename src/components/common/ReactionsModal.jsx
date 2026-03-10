@@ -64,7 +64,7 @@ export default function ReactionsModal({ grouped, allReactions, position, onClos
 
                 <div className="overflow-y-auto max-h-52 p-2 space-y-0.5">
                     {activeUsers.map((r, i) => {
-                        const picUrl = r.profilePictureUrl ? API_BASE_URL + r.profilePictureUrl : null;
+                        const picUrl = r.profilePictureUrl ||  null;
                         const initials = (r.displayName || r.username || '?')
                             .split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
                         return (

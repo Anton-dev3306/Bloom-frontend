@@ -17,9 +17,7 @@ export default function UserAvatar({ user, onUserUpdate, onRegisterTrigger }) {
         }
     }, [onRegisterTrigger]);
 
-    const profilePicUrl = user?.profilePictureUrl
-        ? API_BASE_URL + user.profilePictureUrl
-        : null;
+    const profilePicUrl = user?.profilePictureUrl || null;
 
     const handleProfilePictureSelect = async (e) => {
         const file = e.target.files?.[0];
