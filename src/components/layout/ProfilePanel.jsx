@@ -128,9 +128,8 @@ export default function ProfilePanel({ user, onClose, onUserUpdate }) {
         }
     };
 
-    const profilePicUrl = user?.profilePictureUrl
-        ? API_BASE_URL + user.profilePictureUrl
-        : null;
+    const profilePicUrl = user?.profilePictureUrl || null;
+
 
     return (
         <div className="absolute inset-0 z-50 flex flex-col bg-white animate-slideIn">
