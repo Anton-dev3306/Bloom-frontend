@@ -49,7 +49,7 @@ export default function Home() {
           {/* Footer */}
           <footer className="text-center mt-16">
             <p className="text-gray-400 text-sm">
-              &copy;Bloom {new Date().getFullYear()}.    Todos los derechos reservados.
+              &copy;Bloom {new Date().getFullYear()}.    Creado por Anton-dev3306.
             </p>
           </footer>
         </div>
