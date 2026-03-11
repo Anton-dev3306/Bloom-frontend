@@ -82,9 +82,6 @@ export default function MessageBubble({
     const fileName = metadata.fileName || 'Archivo';
     const fileSize = metadata.fileSize || 0;
     const isPdf = fileName?.toLowerCase().endsWith('.pdf');
-    const fileViewUrl = isPdf
-        ? `https://docs.google.com/viewer?url=${encodeURIComponent(imageUrl)}`
-        : imageUrl;
 
 
     const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8082';
@@ -237,7 +234,7 @@ export default function MessageBubble({
 
                     {/* Tarjeta de archivo */}
                     <a
-                        href={fileViewUrl}
+                        href={imageUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`
