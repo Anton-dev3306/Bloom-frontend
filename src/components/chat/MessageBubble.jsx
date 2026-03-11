@@ -74,7 +74,9 @@ export default function MessageBubble({
         !isImagePending && !isVideoPending && isAudioPending &&
         isEmojiOnly(message.content);
 
-    const metadata = message.metadata || {};
+    const metadata = typeof message.metadata === 'string'
+        ? JSON.parse(message.metadata)
+        : (message.metadata || {});
     const imageUrl = metadata.url;
     const thumbnailUrl = metadata.thumbnailUrl;
     const fileName = metadata.fileName || 'Archivo';

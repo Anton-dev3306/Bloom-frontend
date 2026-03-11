@@ -483,7 +483,7 @@ export const APP_METADATA = {
     DESCRIPTION: 'Aplicación de mensajería en tiempo real',
     AUTHOR: 'Anton-dev3306',
     SUPPORT_EMAIL: 'support@Bloom.com',
-    WEBSITE: 'https://messenger.com',
+    WEBSITE: 'https://bloom.com',
 };
 
 // Exportar todo como default también
