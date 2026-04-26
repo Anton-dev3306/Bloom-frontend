@@ -31,34 +31,7 @@ Bloom is a full-stack real-time messaging platform with support for private and 
 - 🔍 In-chat message search
 - 🗑️ Message and chat deletion
 
----
 
-## 🚀 Run locally
-
-1. Clone the repository
-   ```bash
-   git clone https://github.com/Anton-dev3306/Bloom-frontend
-   cd Bloom-frontend
-   ```
-
-2. Install dependencies
-   ```bash
-   npm install
-   ```
-
-3. Create a `.env.local` file and set the following variable:
-   ```env
-   NEXT_PUBLIC_API_URL=http://localhost:8082
-   ```
-
-4. Start the development server
-   ```bash
-   npm run dev
-   ```
-
-> The backend must be running locally or pointed to a deployed instance via `NEXT_PUBLIC_API_URL`.
-
----
 
 ## 📁 Project Structure
 
