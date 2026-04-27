@@ -58,6 +58,8 @@ src/
 
 ---
 
+![Bloom Architecture](./bloom-architecture.png)
+
 ## 🔗 Links
 
 - **Live App:** https://bloom-frontend-smoky.vercel.app
