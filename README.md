@@ -58,7 +58,7 @@ src/
 
 ---
 
-![Bloom Architecture](./bloom-architecture.png)
+![Bloom Architecture](./Bloom-architecture.png)
 
 ## 🔗 Links
 
